@@ -61,6 +61,37 @@ a {
       background: none;
       border: 0; }
 
+.home_recomendados {
+  overflow: hidden; }
+  .home_recomendados h2 {
+    text-align: center;
+    margin: 1em; }
+  .home_recomendados_carrousel {
+    width: 300%;
+    height: 45vh;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0 12%; }
+    .home_recomendados_carrousel_item {
+      width: 25%;
+      display: flex;
+      flex-flow: column nowrap;
+      overflow: hidden;
+      align-items: center; }
+      .home_recomendados_carrousel_item img {
+        width: 80%;
+        height: 65%;
+        object-fit: cover;
+        object-position: center center; }
+      .home_recomendados_carrousel_item h2 {
+        margin: 0.5em; }
+  .home_recomendados_selector {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center; }
+    .home_recomendados_selector button {
+      margin: 0.5em 1em; }
+
 .home {
   width: 100vw;
   padding-top: 10vh;

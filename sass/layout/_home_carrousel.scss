@@ -1,0 +1,41 @@
+.home_recomendados {
+    overflow: hidden;
+
+    h2 {
+        text-align: center;
+        margin: 1em;
+    }
+
+    &_carrousel {
+        width: 300%;
+        height: 45vh;
+        @include flex-row-nowrap;
+        padding: 0 12%;
+
+        &_item {
+            width: 25%;
+            @include flex-col-nowrap;
+            overflow: hidden;
+            align-items: center;
+
+            img {
+                width: 80%;
+                height: 65%;
+                @include img-pos;
+            }
+
+            h2 {
+                margin: 0.5em;
+            }
+        }
+    }
+
+    &_selector {        
+            @include flex-row-nowrap;
+            justify-content: center;
+
+            button {
+                margin: 0.5em 1em;
+            }        
+    }
+}
