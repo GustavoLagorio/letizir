@@ -1,0 +1,132 @@
+.home {
+    width: 100vw;
+    padding-top: 10vh;
+    height: auto;
+
+    &_titulo {
+        width: 100%;
+        height: 60vh;
+        overflow: hidden;
+
+        .titulo {
+            font-size: 2em;
+            position: absolute;
+            top: 40vh;
+            z-index: +2;            
+
+            p {
+                padding-left: 2em;                
+            }
+
+            p:first-child {
+                padding-left: 1em;
+            }
+        }
+
+        &_slider {
+            width: 300%;
+            height: 100%;
+            overflow: hidden;
+            @include flex-row-nowrap;
+            animation: slide-home 20s infinite alternate ease-in-out;
+
+            &_item {
+                width: 100%/3;
+                overflow: hidden;                
+
+                img {
+                    @include img-pos;
+                    width: 100%;                    
+                }
+            }
+        }
+    }
+
+    &_novedades {
+        @include flex-col-nowrap;
+
+        h2 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 2em;
+        }
+
+        .separador1 {
+            margin: 1em;
+        }
+
+        &_list {
+            display: grid;
+            grid-template-rows: 40vh 40vh;
+            grid-template-columns: 1fr 1fr;
+
+            .home_novedades-item {
+                @include flex-col-nowrap;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+
+                img {
+                    @include img-pos;
+                    height: 70%;
+                }
+            }
+        }
+
+        a {
+            text-align: center;
+        }
+    }
+
+    &_eventos {
+        h2 {
+            text-align: center;
+            margin-top: 1em
+        }
+        //este no tiene separador
+
+        &_fechas {
+            @include flex-row-nowrap;
+            width: 100%;
+            height: 50vh;
+            margin: 1em 0;
+
+            img {
+                @include img-pos;
+                width: 50%;
+            }
+        }
+
+        &_eventos {
+            width: 70%;
+            height: 45vh;
+            margin: 15%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                @include img-pos;
+            }
+        }
+    }
+
+    &_video {
+        width: 100%;
+        height: auto;
+        margin: 1em 0;
+    }
+}
+
+@keyframes slide-home {
+    0% {
+        transform: translateX(-0%);
+    }
+
+    33% {
+        transform: translateX(-100%/3%);
+    }
+
+    66% {
+        transform: translateX(-100%*2/3);
+    }
+}

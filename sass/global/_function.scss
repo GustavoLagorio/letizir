@@ -1,0 +1,16 @@
+//Mixins
+
+@mixin img-pos {
+    object-fit: cover;
+    object-position: center center;
+}
+
+@mixin flex-col-nowrap {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+@mixin flex-row-nowrap {
+    display: flex;
+    flex-flow: row nowrap;
+}
