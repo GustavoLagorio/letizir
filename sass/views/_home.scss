@@ -51,13 +51,9 @@
             margin-top: 2em;
         }
 
-        .separador1 {
-            margin: 1em;
-        }
-
         &_list {
             display: grid;
-            grid-template-rows: 40vh 40vh;
+            grid-template-rows: 50vh 50vh;
             grid-template-columns: 1fr 1fr;
 
             .home_novedades-item {
@@ -65,10 +61,11 @@
                 align-items: center;
                 width: 100%;
                 height: 100%;
+                margin: 0.5em 0;
 
                 img {
                     @include img-pos;
-                    height: 70%;
+                    height: 75%;
                 }
             }
         }
@@ -114,6 +111,81 @@
         width: 100%;
         height: auto;
         margin: 1em 0;
+    }
+
+    &_trending {
+        h2 {
+            text-align: center;
+            font-size: 1.5em;
+            margin: 1em;
+        }
+
+        &_hashtag {  
+            
+            ul {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-evenly;
+                
+                li {
+                    width: 20%;
+                    margin: 0.5em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &_caracteristicas {
+        @include flex-col-nowrap;
+        align-content: center;
+
+        img {
+            width: 40%;
+            text-align: center;
+            margin: 1em 30%;
+        }
+        p {
+            width: 60%;
+            margin: 0 20%;
+            text-align: center;
+        }
+
+        .separador1 {
+            width: 40%;
+            margin: 0.5em 0 0 30%;
+
+            img {
+                width: 100%;
+                @include img-pos;
+                margin: 0;
+            }
+        }
+        &_list {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+
+            &_item {
+                p {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    &_redes {
+        h2 {
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        img {
+            width: 70%;
+            margin: 1em 15%;
+            @include img-pos;
+            height: 40%;
+        }
     }
 }
 

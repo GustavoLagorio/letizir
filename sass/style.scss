@@ -6,12 +6,15 @@
 //Reset y fuentes
 
 @import "./global/reset";
-//@import "./global/fonts";
+@import "./global/fonts";
+@import "./global/separador";
 
 //Layout
 
 @import "./layout/navbar";
 @import "./layout/home_carrousel";
+@import "./layout/footer";
+
 
 //Views
 

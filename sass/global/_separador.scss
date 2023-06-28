@@ -1,0 +1,11 @@
+.separador1 {
+    width: 40%;
+    margin: 0 0 1.5em 30%;
+
+    
+    
+    img {
+        width: 100%;
+        @include img-pos
+    }
+}
