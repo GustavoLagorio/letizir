@@ -28,10 +28,27 @@
         z-index: +4;
 
         .nav_list {
-            margin: 5%;                        
+            margin: 5%;
+            height: 50vh;
+            @include flex-col-nowrap;            
+            align-items: flex-start;                        
 
             &_item {
-                margin-top: 10px;                
+                margin: 1em;                
+            }
+        }
+
+        .telefono {
+            width: 60%;
+            text-align: center;
+            @include flex-row-nowrap;
+            margin: 1em 0 1em 1em;
+            font-size: 1.2em;
+            justify-content: space-evenly;
+            align-items: center;
+
+            iconify-icon {
+                font-size: 1.5em;
             }
         }
 
@@ -39,6 +56,11 @@
             ul {
                 @include flex-row-nowrap;
                 justify-content: space-evenly;
+
+                li {
+                    text-align: center;
+                    font-size: 1.5em;
+                }
             }
         }
     }
