@@ -1,0 +1,75 @@
+.producto {
+    width: 100%;
+    padding-top: 10vh;
+
+    img {
+        width: 90%;
+        margin: 5%;
+        max-height: 60vh;
+        @include img-pos;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 1.5em;
+        margin: 0.5em;
+    }
+    p {
+        text-align: center;
+        color: $boton-active1;
+        margin-bottom: 1em
+    }
+    &_porciones {
+        @include flex-row-nowrap;
+        width: 70%;
+        margin-bottom: 1em;
+        justify-content: space-evenly;
+    }
+    &_carro {
+        button {
+            width: 100%;
+            height: 10vh;
+            border: 0;
+            background-color: $letizir;
+            text-align: start;
+            padding: 1em;
+        }
+        margin-bottom: 1em;
+    }
+    &_ingredientes {
+        h2 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 1em;
+        }
+        ul {
+            padding-left: 1em;
+            li {
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+    h2 {
+        text-align: center;
+        font-size: 1.5em;
+        margin-top: 2em;            
+    }
+    &_sugerido {
+        width: 90%;
+        margin: 5%;        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50vh 50vh;
+        justify-content: center;
+        &_item {
+            @include flex-col-nowrap;
+            width: 100%;
+            align-items: center;
+            overflow: hidden;            
+            img {
+                height: 75%;;
+                @include img-pos;
+            }
+        }               
+    }
+}

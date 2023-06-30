@@ -59,9 +59,10 @@
             .home_novedades-item {
                 @include flex-col-nowrap;
                 align-items: center;
-                width: 100%;
+                width: 90%;
                 height: 100%;
-                margin: 0.5em 0;
+                margin: 0.5em;
+                overflow: hidden;
 
                 img {
                     @include img-pos;
