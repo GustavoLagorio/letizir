@@ -10,8 +10,7 @@
     }
 
     h1 {
-        text-align: center;
-        font-size: 1.5em;
+        text-align: center;        
         margin: 0.5em;
     }
     p {
@@ -37,10 +36,10 @@
         margin-bottom: 1em;
     }
     &_ingredientes {
-        h2 {
-            text-align: center;
-            font-size: 1.5em;
+        h3 {            
+            font-size: 1em;
             margin-bottom: 1em;
+            padding-left: 1em;            
         }
         ul {
             padding-left: 1em;
@@ -50,8 +49,7 @@
         }
     }
     h2 {
-        text-align: center;
-        font-size: 1.5em;
+        text-align: center;        
         margin-top: 2em;            
     }
     &_sugerido {

@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    font-size: 16x;
+    color: $fuente1;
 }
 
 ul {
@@ -10,4 +12,14 @@ ul {
 a {
     text-decoration: none;
     color: $fuente1;
+}
+
+h1, h2 {
+    letter-spacing: 4px;
+    font-size: 1.3em;
+    color: $titulos;
+}
+
+h3 {
+    letter-spacing: 2px;
 }
