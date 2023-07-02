@@ -10,20 +10,49 @@
     }
 
     h1 {
-        text-align: center;        
+        text-align: center;
         margin: 0.5em;
     }
+
     p {
         text-align: center;
         color: $boton-active1;
         margin-bottom: 1em
     }
+
     &_porciones {
         @include flex-row-nowrap;
         width: 70%;
         margin-bottom: 1em;
         justify-content: space-evenly;
+        align-items: center;
+
+        li:first-child {
+            background: none;
+            border: none;
+            border-radius: 0;
+            width: 5em;
+        }
+
+        li {
+            button {
+                background: none;
+                border: $boton-active1 solid 1px;
+                border-radius: 50%;
+                width: 2em;
+                height: 2em;
+            }
+        }
+
+        li.active {
+            button {
+                background-color: $boton-active2;
+                border: none;
+                color: $fuente2;
+            }
+        }
     }
+
     &_carro {
         button {
             width: 100%;
@@ -33,41 +62,50 @@
             text-align: start;
             padding: 1em;
         }
+
         margin-bottom: 1em;
     }
+
     &_ingredientes {
-        h3 {            
+        h3 {
             font-size: 1em;
             margin-bottom: 1em;
-            padding-left: 1em;            
+            padding-left: 1em;
         }
+
         ul {
             padding-left: 1em;
+
             li {
                 margin-bottom: 0.5em;
             }
         }
     }
+
     h2 {
-        text-align: center;        
-        margin-top: 2em;            
+        text-align: center;
+        margin-top: 2em;
     }
+
     &_sugerido {
         width: 90%;
-        margin: 5%;        
+        margin: 5%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 50vh 50vh;
         justify-content: center;
+
         &_item {
             @include flex-col-nowrap;
             width: 100%;
             align-items: center;
-            overflow: hidden;            
+            overflow: hidden;
+
             img {
-                height: 75%;;
+                height: 75%;
+                ;
                 @include img-pos;
             }
-        }               
+        }
     }
 }

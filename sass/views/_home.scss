@@ -11,7 +11,7 @@
         .titulo {
             position: absolute;
             top: 40vh;
-            z-index: +2;            
+            z-index: +2;
 
             p {
                 padding-left: 2em;
@@ -21,11 +21,12 @@
                 letter-spacing: 1.2px;
                 margin: -5% 0;
                 opacity: 0.8;
+
                 span {
                     font-size: 1em;
                     color: #333333;
                     font-family: 'Abhaya Libre', serif;
-                }                
+                }
             }
 
             p:first-child {
@@ -42,11 +43,11 @@
 
             &_item {
                 width: 100vw;
-                overflow: hidden;                
+                overflow: hidden;
 
                 img {
                     @include img-pos;
-                    width: 100%;                    
+                    width: 100%;
                 }
             }
         }
@@ -56,7 +57,7 @@
         @include flex-col-nowrap;
 
         h2 {
-            text-align: center;            
+            text-align: center;
             margin-top: 2em;
         }
 
@@ -77,9 +78,11 @@
                     @include img-pos;
                     height: 75%;
                 }
+
                 h3 {
                     margin: 0.3em;
                 }
+
                 p {
                     color: $boton-active1;
                 }
@@ -97,7 +100,7 @@
         h2 {
             text-align: center;
             margin-top: 1em
-        }        
+        }
 
         &_fechas {
             @include flex-row-nowrap;
@@ -132,18 +135,19 @@
 
     &_trending {
         margin-top: 4em;
+
         h2 {
             text-align: center;
             margin: 1em;
         }
 
-        &_hashtag {  
-            
+        &_hashtag {
+
             ul {
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: space-evenly;
-                
+
                 li {
                     width: 20%;
                     margin: 0.5em;
@@ -162,6 +166,7 @@
             text-align: center;
             margin: 1em 30%;
         }
+
         p {
             width: 60%;
             margin: 0 20%;
@@ -178,14 +183,62 @@
                 margin: 0;
             }
         }
+
         &_list {
             display: grid;
-            grid-template-rows: 1fr 1fr;
-            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 30vh 30vh;
+            grid-template-columns: 45vw 45vw;
+            gap: 2%;
 
             &_item {
+                @include flex-col-nowrap;
+                justify-content: space-evenly;
+                align-items:center;
+                height: 80%;
+
+                .icono {
+                    width: 100%;
+                    height: 40%;
+
+                    img {
+                        object-position: center center;
+                        object-fit: contain;
+                        height: 90%;
+                        margin: 0;
+                        padding: 0;
+                        position: relative;
+                        left: 30%;
+                    }
+                }
+
                 p {
-                    font-size: 10px;
+                    font-size: 0.8em;
+                    height: 60%;
+                    margin: 0;
+                }
+
+                .iconos {
+                    @include flex-row-nowrap;
+                    justify-content: center;
+                    align-content: center;
+                    height: 40%;
+                    width: 100%;
+                    overflow: hidden;
+
+                    img {
+                        object-fit: contain;
+                        object-position: center center;
+                        height: 70%;
+                        margin: 0;
+                        position: relative;
+                        top: 20%;
+                    }
+
+                    img:first-child, img:last-child {
+                        
+                        top: 0%;
+                    }
+
                 }
             }
         }
@@ -193,14 +246,15 @@
 
     &_redes {
         margin-top: 2em;
+
         h2 {
-            text-align: center;            
+            text-align: center;
         }
 
-        &_links {            
+        &_links {
             text-align: center;
             margin-top: 0.2em;
-            font-size: 2em;         
+            font-size: 2em;
         }
 
         img {
@@ -211,6 +265,9 @@
         }
     }
 }
+
+
+
 
 @keyframes slide-home {
     0% {
