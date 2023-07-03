@@ -31,6 +31,11 @@ h3 {
     object-fit: cover;
     object-position: center center; }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .separador1 {
+    width: 15%;
+    margin: 0 0 1.5em 42.5%; } }
+
 .nav {
   background-color: #fad0d1;
   display: flex;
@@ -118,19 +123,21 @@ h3 {
   .home_recomendados_carrousel {
     width: 300%;
     height: 45vh;
-    display: flex;
-    flex-flow: row nowrap;
-    padding: 0 12%;
-    transition: all .5s ease; }
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 25% 25% 25%;
+    transition: all .5s ease;
+    margin-left: 12%; }
     .home_recomendados_carrousel_item {
-      width: 25%;
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-flow: column nowrap;
       overflow: hidden;
       align-items: center; }
       .home_recomendados_carrousel_item img {
         width: 80%;
-        height: 65%;
+        height: 75%;
         object-fit: cover;
         object-position: center center; }
       .home_recomendados_carrousel_item h3 {
@@ -143,6 +150,10 @@ h3 {
     justify-content: center; }
     .home_recomendados_selector button {
       margin: 0.5em 1em; }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home_recomendados_carrousel {
+    height: 60vh; } }
 
 footer {
   display: flex;
@@ -167,46 +178,56 @@ footer {
     footer .contacto p {
       text-align: center; }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer .separador1 {
+    margin: 1.5em 0 1.5em 42.5%; } }
+
 .home {
   width: 100vw;
   padding-top: 10vh;
   height: auto; }
   .home_titulo {
     width: 100%;
-    height: 60vh;
-    overflow: hidden; }
-    .home_titulo .titulo {
-      position: absolute;
-      top: 40vh;
-      z-index: +2; }
-      .home_titulo .titulo p {
-        padding-left: 2em;
-        color: #333333;
-        font-size: 2em;
-        font-family: 'Abhaya Libre', serif;
-        letter-spacing: 1.2px;
-        margin: -5% 0;
-        opacity: 0.8; }
-        .home_titulo .titulo p span {
-          font-size: 1em;
+    height: 90vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 60vw 40vw;
+    grid-template-rows: 90vh; }
+    .home_titulo_left {
+      background: linear-gradient(0deg, #fad0d1 0%, #d88f8f 50%, #fad0d1 90%, #fadada 100%);
+      width: 100%; }
+      .home_titulo_left .titulo-text {
+        position: absolute;
+        top: 50%;
+        width: 65vw;
+        z-index: +2; }
+        .home_titulo_left .titulo-text p {
+          padding-left: 1em;
           color: #333333;
-          font-family: 'Abhaya Libre', serif; }
-      .home_titulo .titulo p:first-child {
-        padding-left: 1em; }
-    .home_titulo_slider {
-      width: 300%;
-      height: 100%;
-      overflow: hidden;
+          font-size: 1.7em;
+          font-family: 'Abhaya Libre', serif;
+          letter-spacing: 1.2px;
+          margin: -5% 0;
+          opacity: 0.8; }
+          .home_titulo_left .titulo-text p span {
+            font-size: 1em;
+            color: #333333;
+            font-family: 'Abhaya Libre', serif; }
+        .home_titulo_left .titulo-text p:first-child {
+          padding-left: 0.5em; }
+    .home_titulo_right {
       display: flex;
-      flex-flow: row nowrap;
-      animation: slide-home 20s infinite alternate ease-in-out; }
-      .home_titulo_slider_item {
-        width: 100vw;
+      flex-flow: column nowrap;
+      width: 40vw;
+      height: 90vh; }
+      .home_titulo_right .right-img {
+        width: 100%;
+        height: 30vh;
         overflow: hidden; }
-        .home_titulo_slider_item img {
+        .home_titulo_right .right-img img {
           object-fit: cover;
           object-position: center center;
-          width: 100%; }
+          width: 40vw; }
   .home_novedades {
     display: flex;
     flex-flow: column nowrap; }
@@ -237,7 +258,7 @@ footer {
       text-align: center;
       font-size: 1.2em;
       margin: 2em 0; }
-  .home_eventos h2 {
+  .home_eventos_titulo h2 {
     text-align: center;
     margin-top: 1em; }
   .home_eventos_fechas {
@@ -259,7 +280,7 @@ footer {
       width: 100%;
       object-fit: cover;
       object-position: center center; }
-  .home_video {
+  .home_eventos_video {
     width: 100%;
     height: auto;
     margin: 1em 0; }
@@ -290,7 +311,7 @@ footer {
       text-align: center; }
     .home_caracteristicas .separador1 {
       width: 40%;
-      margin: 0.5em 0 0 30%; }
+      margin: 0.5em 0 1em 30%; }
       .home_caracteristicas .separador1 img {
         width: 100%;
         object-fit: cover;
@@ -300,7 +321,7 @@ footer {
       display: grid;
       grid-template-rows: 30vh 30vh;
       grid-template-columns: 45vw 45vw;
-      gap: 2%; }
+      margin: 0 5vw; }
       .home_caracteristicas_list_item {
         display: flex;
         flex-flow: column nowrap;
@@ -328,7 +349,7 @@ footer {
           justify-content: center;
           align-content: center;
           height: 40%;
-          width: 100%;
+          width: 70%;
           overflow: hidden; }
           .home_caracteristicas_list_item .iconos img {
             object-fit: contain;
@@ -337,7 +358,8 @@ footer {
             margin: 0;
             position: relative;
             top: 20%; }
-          .home_caracteristicas_list_item .iconos img:first-child, .home_caracteristicas_list_item .iconos img:last-child {
+          .home_caracteristicas_list_item .iconos img:first-child,
+          .home_caracteristicas_list_item .iconos img:last-child {
             top: 0%; }
   .home_redes {
     margin-top: 2em; }
@@ -353,6 +375,36 @@ footer {
       object-fit: cover;
       object-position: center center;
       height: 40%; }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home_titulo_left .titulo-text p {
+    font-size: 4em;
+    margin: -5% 0; }
+  .home_novedades_list {
+    grid-template-rows: 50vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .home_eventos {
+    display: grid;
+    grid-template-columns: 45vw 45vw;
+    grid-template-rows: 10vh 80vh;
+    grid-template-areas: "titulo titulo" "fechas eventos";
+    justify-content: center;
+    align-content: center;
+    margin: 0 5vw; }
+    .home_eventos_titulo {
+      grid-area: titulo; }
+    .home_eventos_fechas, .home_eventos_video {
+      grid-area: fechas;
+      width: 90%;
+      height: 45%; }
+    .home_eventos_eventos {
+      grid-area: eventos;
+      height: 70%;
+      width: 90%;
+      margin: 15% 0 15% 10%; }
+    .home_eventos_video {
+      position: relative;
+      top: 50%; } }
 
 @keyframes slide-home {
   0% {

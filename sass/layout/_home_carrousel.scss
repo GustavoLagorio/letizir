@@ -1,6 +1,5 @@
 .home_recomendados {
     overflow: hidden;
-
     h2 {
         text-align: center;
         margin: 3em 0 0 0;
@@ -9,27 +8,30 @@
     &_carrousel {
         width: 300%;
         height: 45vh;
-        @include flex-row-nowrap;
-        padding: 0 12%;
-        transition: all .5s ease;        
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 25% 25% 25%;        
+        transition: all .5s ease;
+        margin-left: 12%;        
 
         &_item {
-            width: 25%;
+            width: 100%;
+            height: 100%;
             @include flex-col-nowrap;
             overflow: hidden;
-            align-items: center;
+            align-items: center;            
 
             img {
                 width: 80%;
-                height: 65%;
+                height: 75%;
                 @include img-pos;
             }
 
             h3 {
-                margin: 0.3em;
+                margin: 0.3em;                
             }
             p {
-                color: $boton-active1;
+                color: $boton-active1;                
             }
         }
     }
@@ -41,5 +43,11 @@
             button {
                 margin: 0.5em 1em;
             }        
+    }
+}
+
+@media (min-width: $tablet) and (max-width: $laptop) {
+    .home_recomendados_carrousel {
+        height: 60vh;
     }
 }

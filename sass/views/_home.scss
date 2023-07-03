@@ -5,49 +5,57 @@
 
     &_titulo {
         width: 100%;
-        height: 60vh;
+        height: 90vh;
         overflow: hidden;
+        display: grid;
+        grid-template-columns: 60vw 40vw;
+        grid-template-rows: 90vh;
 
-        .titulo {
-            position: absolute;
-            top: 40vh;
-            z-index: +2;
+        &_left {
+            background: linear-gradient(0deg, $letizir 0%, $boton-active1 50%, $letizir 90%, #fadada 100%);
+            width: 100%;
 
-            p {
-                padding-left: 2em;
-                color: #333333;
-                font-size: 2em;
-                font-family: 'Abhaya Libre', serif;
-                letter-spacing: 1.2px;
-                margin: -5% 0;
-                opacity: 0.8;
+            .titulo-text {
+                position: absolute;
+                top: 50%;
+                width: 65vw;
+                z-index: +2;
 
-                span {
-                    font-size: 1em;
+                p {
+                    padding-left: 1em;
                     color: #333333;
+                    font-size: 1.7em;
                     font-family: 'Abhaya Libre', serif;
-                }
-            }
+                    letter-spacing: 1.2px;
+                    margin: -5% 0;
+                    opacity: 0.8;
 
-            p:first-child {
-                padding-left: 1em;
+                    span {
+                        font-size: 1em;
+                        color: #333333;
+                        font-family: 'Abhaya Libre', serif;
+                    }
+                }
+
+                p:first-child {
+                    padding-left: 0.5em;
+                }
             }
         }
 
-        &_slider {
-            width: 300%;
-            height: 100%;
-            overflow: hidden;
-            @include flex-row-nowrap;
-            animation: slide-home 20s infinite alternate ease-in-out;
+        &_right {
+            @include flex-col-nowrap;
+            width: 40vw;
+            height: 90vh;
 
-            &_item {
-                width: 100vw;
+            .right-img {
+                width: 100%;
+                height: 30vh;
                 overflow: hidden;
 
                 img {
                     @include img-pos;
-                    width: 100%;
+                    width: 40vw;
                 }
             }
         }
@@ -97,9 +105,11 @@
     }
 
     &_eventos {
-        h2 {
-            text-align: center;
-            margin-top: 1em
+        &_titulo {
+            h2 {
+                text-align: center;
+                margin-top: 1em
+            }
         }
 
         &_fechas {
@@ -125,13 +135,14 @@
                 @include img-pos;
             }
         }
+
+        &_video {
+            width: 100%;
+            height: auto;
+            margin: 1em 0;
+        }
     }
 
-    &_video {
-        width: 100%;
-        height: auto;
-        margin: 1em 0;
-    }
 
     &_trending {
         margin-top: 4em;
@@ -175,7 +186,7 @@
 
         .separador1 {
             width: 40%;
-            margin: 0.5em 0 0 30%;
+            margin: 0.5em 0 1em 30%;
 
             img {
                 width: 100%;
@@ -188,12 +199,12 @@
             display: grid;
             grid-template-rows: 30vh 30vh;
             grid-template-columns: 45vw 45vw;
-            gap: 2%;
+            margin: 0 5vw;
 
             &_item {
                 @include flex-col-nowrap;
                 justify-content: space-evenly;
-                align-items:center;
+                align-items: center;
                 height: 80%;
 
                 .icono {
@@ -222,7 +233,7 @@
                     justify-content: center;
                     align-content: center;
                     height: 40%;
-                    width: 100%;
+                    width: 70%;
                     overflow: hidden;
 
                     img {
@@ -234,8 +245,9 @@
                         top: 20%;
                     }
 
-                    img:first-child, img:last-child {
-                        
+                    img:first-child,
+                    img:last-child {
+
                         top: 0%;
                     }
 
@@ -266,8 +278,69 @@
     }
 }
 
+//Adapatacion a dispositivos
 
+@media (min-width: $tablet) and (max-width: $laptop) {
 
+    .home {
+        &_titulo {
+            &_left {
+
+                .titulo-text {
+                    p {
+                        font-size: 4em;
+                        margin: -5% 0;
+                    }
+                }
+            }
+        }
+
+        &_novedades {
+            &_list {
+                grid-template-rows: 50vh;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        &_eventos {
+            display: grid;
+            grid-template-columns: 45vw 45vw;
+            grid-template-rows: 10vh 80vh;
+            grid-template-areas:
+                "titulo titulo"
+                "fechas eventos";
+            justify-content: center;
+            align-content: center;
+            margin: 0 5vw;
+
+            &_titulo {
+                grid-area: titulo;
+            }
+
+            &_fechas,
+            &_video {
+                grid-area: fechas;
+                width: 90%;
+                height: 45%;
+            }
+
+            &_eventos {
+                grid-area: eventos;
+                height: 70%;
+                width: 90%;
+                margin: 15% 0 15% 10%;
+            }
+
+            &_video {
+                position: relative;
+                top: 50%;
+            }
+        }
+    }
+
+}
+
+//Animacion nav_menu
 
 @keyframes slide-home {
     0% {

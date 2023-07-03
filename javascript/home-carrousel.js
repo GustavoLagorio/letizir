@@ -7,7 +7,7 @@ const recomendacionButtons = document.querySelectorAll('.recomendacion');
 recomendacionButtons.forEach((button, i) => {
     button.addEventListener('click', () => {
         let position = i
-        let positionX = position * -100/4.31
+        let positionX = position * -25
 
         homeCarrouselContainer.style.transform = `translateX(${positionX}%)`
     })

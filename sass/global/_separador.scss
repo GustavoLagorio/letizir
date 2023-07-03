@@ -9,3 +9,10 @@
         @include img-pos
     }
 }
+
+@media (min-width: $tablet) and (max-width: $laptop) {
+    .separador1 {
+        width: 15%;
+        margin: 0 0 1.5em 42.5%;
+    }
+}
